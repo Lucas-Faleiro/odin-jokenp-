@@ -29,7 +29,7 @@ function playRound(humanChoice, computerChoice) {
   console.log(`The computer chose ${computerChoice}`);
 
   if (humanChoice === computerChoice) {
-    return "It's a tie!";
+    return console.log("It's a tie!");
   } else if (humanChoice === "rock" && computerChoice === "scissors") {
     userScore += 1;
     console.log(`Human score: ${userScore}`);
@@ -57,6 +57,15 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-// console.log(getHumanChoice());
+function playGame() {
+  while (userScore != 3 || computerScore != 3) {
+    playRound();
+    if (userScore === 3) {
+      return "You won the game! Congratulations!";
+    } else if (computerScore === 3) {
+      return "The computer won the game! Too bad";
+    }
+  }
+}
 
-console.log(playRound());
+console.log(playGame());
