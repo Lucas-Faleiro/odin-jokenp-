@@ -6,12 +6,12 @@ const scoreList = document.querySelectorAll(".score");
 const roundResult = document.querySelector("#roundResult");
 const computerChoicePara = document.querySelector("#computerChoice");
 
-function getRandomInt() {
+const getRandomInt = () => {
   return Math.floor(Math.random() * 3);
-}
+};
 
 // returns random computer choice to pass as variable to playRound function
-function getComputerChoice() {
+const getComputerChoice = () => {
   let randomNumber = getRandomInt();
   switch (randomNumber) {
     case 0:
@@ -21,7 +21,7 @@ function getComputerChoice() {
     case 2:
       return "Scissors";
   }
-}
+};
 
 const playRound = (e) => {
   const computerChoice = getComputerChoice();
